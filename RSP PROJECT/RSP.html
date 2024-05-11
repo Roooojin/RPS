@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+    body {
+        background-color: #3B2A9F;
+        margin-top: 150px;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .images-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .images-container img {
+        margin-right: 10px;
+        width: 200px;
+    }
+
+    .btn-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .result {
+        color: white;
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+
+
+    #rock{
+        margin-left: 50px;
+        width: 20px;
+        height: 20px;
+    }
+
+    #paper{
+        margin-left: 190px;
+         width: 20px;
+        height: 20px;
+    }
+
+    #scissors{
+        margin-left: 190px;
+         width: 20px;
+        height: 20px;
+    }
+
+    #play-btn{
+        background-color: #3B2A9F;
+        border-color: white;
+        border-width:5px;
+        border-radius: 15px;
+    }
+
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="text-center mt-4 mb-3">
+            <div id="result" class="result"></div>
+              <div class="result">
+    <p id="result-message"></p>
+        <p id="player-score">Player Score: 0</p>
+        <p id="computer-score">Computer Score: 0</p>
+
+</div>
+
+        </div>
+        <div class="text-center mt-4 mb-3">
+            <div class="images-container">
+                <img src="https://s3-alpha-sig.figma.com/img/4584/6ac7/5b5fd80124088195755037b27aedd490?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=E-~MWPbv~MJzbh-zHdR-qWSpqYFVjd~ej9Yso5-FREhWqAyVpqOrRcx1x2KkLFqG-XOj3Ig6ttSsL55taMSPYhxzYWMSd0aVx00p~kmrInt6AMKs0CJ5rnfb641ROKUR9PfK-VrhHk2jiAiCvotAL1fxDMEgYT0~YZMzlTJCwOrGK352fSVJRALCzCut8ev2gBgkzVaiFHV2qdtKEmTdSm4kOGcZ2BoQm10k~s~pq~-JvPTF0Se9mq8OLTAN-Fd~kDmhnUWa5YCcTGa3I4QfMy1f-kBGWCqBE9VR1Gn5tOxBk0-D6jAok91S~CXYs-oIMsEMkfZr~LY~sksbtI713g__" alt="Rock">
+                <img src="https://s3-alpha-sig.figma.com/img/7a42/cd01/28c5e2c710aecce9fd778e8aed9dc12c?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lOui8yGnDAE4WDgt43Ff9zGESA283DcjxeUN1vboZOWkrAE6JCGZ6m-5W4GCdIrpCHyDWRtzHpAEif-iKrUsSfyU2VCHFkwB5bUXPTPMepShnMqZMn9hZ9DMkVFIGd6KsjpPPp32wrRinTftkhwuGomVFSNgcQoJQe7iTPvpEVJ~-gmXGbvMGvdMT-aHUfnggDYvloj4hiOjA5m5MmaNm8DdkHAY7TGaoYv71953oEjO4pDe60xmA28tnD2AutmbRFU1os2hYqwbb006eh483eOl0Kp2~9T0fPbKQJdNMFPGyIhTvYgulbvKypU2BzWwfeKl0X-eRf5EroFsGK6oyg__" alt="Paper">
+                <img src="https://s3-alpha-sig.figma.com/img/f8de/a63b/d8ebbec3c800f8ce4ffaef872f1e5197?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BUF9jF4bgyTxaeIl1JMpzsIDY4URCPrik5Zsh2KEOvFyxhWra4kAmpxVIybj8CK0wEbJwZp5QszVTwfDoWC8O~fQS99vnnVDFzTXS4-q-fFst873xtK1u2a3tqgdtRfKslG8KyqWNrxDP6B1jiGXahVLl2p6E8TGd3VTqMNB-6Z0eKEDt6p8~TOLA9bfavjN58aCzZdiY1N8l7Aqafs1518KHuMpbLseMsck1h~0xY5nSodjSVswFvjaALguZevW-ywuJQFxPHu4NXav7gJnGuIDjNMA-aalSo1PcBUlE6vdAuhquLePM56jIpXi2YWL8mQq0QUhYPKewwLg5FebOw__" alt="Scissors">
+            </div>
+            <div class="btn-container">
+                <input type="radio" id="rock" name="choice" value="rock" class="mr-2" >
+                <input type="radio" id="scissors" name="choice" value="scissors">
+                <input type="radio" id="paper" name="choice" value="paper" class="mr-2" >
+            </div>
+            <button id="play-btn" class="btn btn-primary" onclick="startGame()">START</button>
+        </div>
+
+    </div>
+
+    <script src="Play.js"></script>
+
+</body>
+</html>
